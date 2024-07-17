@@ -123,3 +123,61 @@ Branches are a way to work on different versions of a project at the same time. 
 | `git checkout <branch-name>`             | Switches to the branch called branch-name.                                                                    |
 | `git branch`                             | Lists all branches in the repository.                                                                         |
 
+# Git Diff, Stash, and Tags
+
+## Git Diff
+
+The `git diff` command is used to show the differences between two commits. It compares the changes made in one commit with another, identifying the differences between file versions.
+
+### Diff Concepts
+
+| **Concept**  | **Description**                                                                                              |
+|--------------|--------------------------------------------------------------------------------------------------------------|
+| **a -> file A and b -> file B** | Indicates the two different versions of the same file.                                      |
+| **----**     | Indicates file A.                                                                                             |
+| **+++**      | Indicates file B.                                                                                             |
+| **@@**       | Indicates the line number.                                                                                    |
+
+### Diff Commands
+
+| **Command**                              | **Description**                                                                                              |
+|------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `git diff`                               | Shows the unstaged changes in your working directory compared to the staging area.                           |
+| `git diff --staged`                      | Shows the changes between your last commit and the staging area (changes that are staged and ready to be committed). |
+| `git diff <branch-name-one> <branch-name-two>` | Compares the difference between two branches.                                                                 |
+| `git diff branch-name-one..branch-name-two` | Another way to compare the difference between two branches.                                                    |
+| `git diff <commit-hash-one> <commit-hash-two>` | Compares the difference between two commits.                                                                  |
+
+## Git Stash
+
+Stash is a way to save your changes in a temporary location, allowing you to switch branches or perform other actions without committing changes.
+
+### Stash Commands
+
+| **Command**                              | **Description**                                                                                              |
+|------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `git stash`                              | Saves your changes in a temporary location.                                                                  |
+| `git stash save "work in progress on X feature"` | Saves your changes with a specific name.                                                                     |
+| `git stash list`                         | Views the list of stashes.                                                                                   |
+| `git stash apply`                        | Applies the stash.                                                                                           |
+| `git stash apply stash@{0}`              | Applies a specific stash.                                                                                    |
+| `git stash pop`                          | Applies the stash and drops it from the stash list.                                                          |
+| `git stash drop`                         | Drops the stash.                                                                                             |
+| `git stash apply stash@{0} <branch-name>` | Applies the stash to a specific branch.                                                                      |
+| `git stash clear`                        | Clears all stashes.                                                                                          |
+
+## Git Tags
+
+Tags are used to mark specific points in your repository, such as releases or important commits.
+
+### Tag Commands
+
+| **Command**                              | **Description**                                                                                              |
+|------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `git tag <tag-name>`                     | Creates a new tag with the specified name, attached to the current commit.                                    |
+| `git tag -a <tag-name> -m "Release 1.0"` | Creates an annotated tag with the specified name and message.                                                 |
+| `git tag`                                | Lists all the tags in your repository.                                                                        |
+| `git tag <tag-name> <commit-hash>`       | Tags a specific commit.                                                                                       |
+| `git push origin <tag-name>`             | Pushes tags to a remote repository.                                                                           |
+| `git tag -d <tag-name>`                  | Deletes a tag.                                                                                               |
+| `git push origin :<tag-name>`            | Deletes a tag on a remote repository.                                                                         |
