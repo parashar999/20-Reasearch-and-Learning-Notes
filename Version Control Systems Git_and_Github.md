@@ -70,4 +70,56 @@ A git snapshot is a point in time in the history of your code. It represents a s
 | `git ls-tree <tree-id>`                        | List the contents of a tree object using the tree ID.                                                        |
 | `git show <blob-id>`                           | Display the content of a blob object using the blob ID.                                                      |
 | `git cat-file -p <commit-id>`                  | Display the content of a commit object using the commit ID.                                                  |
+# Branches in Git
+
+Branches are a way to work on different versions of a project at the same time. They allow you to create a separate line of development that can be worked on independently of the main branch. This can be useful when you want to make changes to a project without affecting the main branch or when you want to work on a new feature or bug fix.
+
+## Branching Concepts
+
+| **Concept**              | **Description**                                                                                              |
+|--------------------------|--------------------------------------------------------------------------------------------------------------|
+| **HEAD**                 | The HEAD is a pointer to the current branch that you are working on. It points to the latest commit in the current branch. |
+| **Default Branch**       | The default branch used to be called master, but it is now called main. There is nothing special about main; it is just a convention. |
+
+## Branching Commands
+
+| **Command**                              | **Description**                                                                                              |
+|------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `git branch`                             | Lists all the branches in the current repository.                                                            |
+| `git branch bug-fix`                     | Creates a new branch called bug-fix.                                                                         |
+| `git switch bug-fix`                     | Switches to the bug-fix branch.                                                                              |
+| `git log`                                | Shows the commit history for the current branch.                                                             |
+| `git switch main`                        | Switches to the main branch.                                                                                 |
+| `git switch -c dark-mode`                | Creates and switches to a new branch called dark-mode.                                                       |
+| `git checkout orange-mode`               | Switches to the orange-mode branch.                                                                          |
+
+## Merging Branches
+
+| **Command**                              | **Description**                                                                                              |
+|------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `git checkout main`                      | Switches to the main branch.                                                                                 |
+| `git merge bug-fix`                      | Merges the bug-fix branch into the main branch.                                                              |
+
+### Types of Merges
+
+| **Type**                  | **Description**                                                                                              |
+|---------------------------|--------------------------------------------------------------------------------------------------------------|
+| **Fast-Forward Merge**    | The branch being merged is ahead, with no conflicts.                                                         |
+| **Not Fast-Forward Merge**| The master branch also has commits not in the bug-fix branch, leading to conflicts that need manual resolution. |
+
+## Managing Conflicts
+
+| **Tool**                  | **Description**                                                                                              |
+|---------------------------|--------------------------------------------------------------------------------------------------------------|
+| **VSCode Merge Tool**     | A built-in merge tool in VSCode to help resolve conflicts.                                                   |
+| **Github Merge Tool**     | Github also has a merge tool for resolving conflicts.                                                        |
+
+## Additional Branch Management
+
+| **Command**                              | **Description**                                                                                              |
+|------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `git branch -m <old-branch-name> <new-branch-name>` | Renames a branch from old-branch-name to new-branch-name.                                                      |
+| `git branch -d <branch-name>`            | Deletes a branch called branch-name.                                                                          |
+| `git checkout <branch-name>`             | Switches to the branch called branch-name.                                                                    |
+| `git branch`                             | Lists all branches in the repository.                                                                         |
 
