@@ -49,3 +49,25 @@
 | **Logs**           | The history of commits in the repository.                                                                    |
 | **Gitignore**      | A file specifying which files and directories Git should ignore.                                             |
 
+# Git Behind the Scenes
+
+## Git Snapshots
+A git snapshot is a point in time in the history of your code. It represents a specific version of your code, including all the files and folders that were present at that time. Each snapshot is identified by a unique hash code, which is a string of characters that represents the contents of the snapshot. Snapshot is a loose term that is used when git stores information about the code in a locally stored key-value based database. Everything is stored as an object and each object is identified by a unique hash code.
+
+## 3 Musketeers of Git
+
+| **Object**        | **Description**                                                                                              |
+|-------------------|--------------------------------------------------------------------------------------------------------------|
+| **Commit Object** | Contains information about a commit, including tree object, parent commit object, author, committer, and commit message. |
+| **Tree Object**   | A container for all files and folders in the project, storing file mode, file name, file hash, and parent tree object. |
+| **Blob Object**   | Contains the actual file content within the tree object.                                                     |
+
+## Helpful Commands
+
+| **Command**                                    | **Description**                                                                                              |
+|------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `git show -s --pretty=raw <commit-hash>`       | Display the raw commit object for a specific commit hash.                                                    |
+| `git ls-tree <tree-id>`                        | List the contents of a tree object using the tree ID.                                                        |
+| `git show <blob-id>`                           | Display the content of a blob object using the blob ID.                                                      |
+| `git cat-file -p <commit-id>`                  | Display the content of a commit object using the commit ID.                                                  |
+
