@@ -208,3 +208,58 @@ Git reflog is a command that shows a history of commits, useful for debugging an
 | `git reflog <commit-hash>`              | Shows the history of changes associated with a specific commit hash.                                   |
 | `git reset --hard <commit-hash>`        | Resets the current branch to the specified commit, useful for recovering lost commits or changes.     |
 | `git reset --hard HEAD@{1}`             | Resets the current branch to the commit one step before the current HEAD, based on reflog entries.    |
+# GitHub
+
+GitHub is a web-based Git repository hosting service. It is a popular platform for developers to collaborate on projects and to share code. GitHub provides a user-friendly interface for managing and tracking changes to your code, as well as a platform for hosting and sharing your projects with others.
+
+## GitHub Account
+
+Can create an account by visiting the GitHub website and clicking on the “Sign up” button. You will be prompted to enter your email address and password, and then you will be redirected to the GitHub homepage.
+
+## Configure Your Config File
+
+If you haven’t done it already, you need to configure your git config file. You can do this by running the following command:
+
+### Config Commands
+
+| Command                                     | Description                                                                                     |
+|---------------------------------------------|-------------------------------------------------------------------------------------------------|
+| `git config --global user.email "your-email@example.com"` | Sets your email as your global setting for Git.                                                  |
+| `git config --global user.name "Your Name"`            | Sets your name as your global setting for Git.                                                   |
+| `git config --list`                         | Lists all the settings that you have changed.                                                    |
+
+## Setup SSH Key and Add to GitHub
+
+If you haven’t done it already, you need to setup SSH key and add it to your GitHub account. Follow these steps:
+
+### SSH Setup Commands
+
+| Command                                     | Description                                                                                     |
+|---------------------------------------------|-------------------------------------------------------------------------------------------------|
+| `ssh-keygen -t ed25519 -C "your-email@chaicode.com"` | Generates a new SSH key.                                                                      |
+| `git remote -v`                             | Shows the remote URL of your repository.                                                        |
+| `git remote add origin <remote-url>`         | Adds a remote repository with the specified URL.                                                 |
+| `git push origin main`                      | Pushes your code to the remote repository.                                                       |
+
+## Setting Up an Upstream Remote
+
+Setting up an upstream remote is useful when you want to keep your local repository up to date with the remote repository. It allows you to fetch and merge changes from the remote repository into your local repository.
+
+### Upstream Remote Commands
+
+| Command                                     | Description                                                                                     |
+|---------------------------------------------|-------------------------------------------------------------------------------------------------|
+| `git remote add upstream <remote-url>`       | Adds an upstream remote with the specified URL.                                                  |
+| `git push -u origin main`                   | Pushes your code to the remote repository and sets the upstream.                                  |
+
+## Getting Code from Remote Repository
+
+There are two ways to get code from a remote repository: fetch and pull.
+
+### Fetch and Pull Commands
+
+| Command                                     | Description                                                                                     |
+|---------------------------------------------|-------------------------------------------------------------------------------------------------|
+| `git fetch <remote-name>`                   | Fetches code from the remote repository specified by `<remote-name>`.                             |
+| `git pull origin main`                      | Pulls code from the remote repository's `main` branch.                                            |
+
