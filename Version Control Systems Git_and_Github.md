@@ -181,3 +181,30 @@ Tags are used to mark specific points in your repository, such as releases or im
 | `git push origin <tag-name>`             | Pushes tags to a remote repository.                                                                           |
 | `git tag -d <tag-name>`                  | Deletes a tag.                                                                                               |
 | `git push origin :<tag-name>`            | Deletes a tag on a remote repository.                                                                         |
+
+## Git Rebase
+
+Rebase in Git allows you to move a branch to a new starting point by replaying commits from the original base onto the new base. It helps maintain a cleaner, linear project history.
+
+### Rebase Commands
+
+| Command                                 | Description                                                                                          |
+|-----------------------------------------|------------------------------------------------------------------------------------------------------|
+| `git rebase main`                       | Replays commits from the current branch (`feature-branch`) onto the main branch.                     |
+| `git add <resolved-files>`              | Resolves conflicts during rebase by adding resolved files.                                            |
+| `git rebase --continue`                 | Continues the rebase process after resolving conflicts.                                               |
+| `git rebase --abort`                    | Cancels the rebase operation and resets the branch to its original state before rebase started.      |
+| `git rebase -i <commit-hash>`           | Initiates an interactive rebase allowing you to squash, edit, or reorder commits interactively.       |
+
+## Git Reflog
+
+Git reflog is a command that shows a history of commits, useful for debugging and understanding changes in project history over time.
+
+### Reflog Commands
+
+| Command                                 | Description                                                                                          |
+|-----------------------------------------|------------------------------------------------------------------------------------------------------|
+| `git reflog`                            | Displays a log of all commits, including those no longer referenced by any branch or tag.             |
+| `git reflog <commit-hash>`              | Shows the history of changes associated with a specific commit hash.                                   |
+| `git reset --hard <commit-hash>`        | Resets the current branch to the specified commit, useful for recovering lost commits or changes.     |
+| `git reset --hard HEAD@{1}`             | Resets the current branch to the commit one step before the current HEAD, based on reflog entries.    |
